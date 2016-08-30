@@ -9,14 +9,17 @@ FROM alpine:edge
 
 RUN apk add --no-cache \
         bash \
-        build-base \
+        binutils \
+        libc-dev \
+        fortify-headers \
+        make \
         cmake \
         git \
         gfortran \
         python2 \
         py-pip && \
-    pip install pytest && \
     apk add openblas-dev \
         --no-cache \
         --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ \
-        --allow-untrusted
+        --allow-untrusted && \
+    pip install pytest
