@@ -17,7 +17,7 @@ RUN apk add --no-cache \
         git \
         gfortran \
         python2 \
-        py-pip && \
+        py2-pip && \
     apk add openblas-dev \
         --no-cache \
         --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ \
