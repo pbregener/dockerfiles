@@ -22,4 +22,5 @@ RUN apk add --no-cache \
         --no-cache \
         --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ \
         --allow-untrusted && \
-    pip install pytest
+    pip install pytest pep8 && \
+    rm -rf /root/.cache
