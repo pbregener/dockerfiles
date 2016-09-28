@@ -1,7 +1,4 @@
-FROM alpine:edge
-
-# This image uses the 'edge' version of Alpine Linux, as
-# LAPACK or OpenBLAS are not available for now-stable v3.4.
+FROM alpine:latest
 
 RUN apk add --no-cache \
         bash \
