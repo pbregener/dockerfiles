@@ -26,6 +26,7 @@ RUN apt-get update && \
       ly1 \
       mweights \
       placeins \
+      relsize \
       sourcesanspro \
       ulem \
       units \
