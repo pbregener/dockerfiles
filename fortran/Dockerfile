@@ -15,5 +15,6 @@ RUN apk add --no-cache \
         gfortran \
         python2 \
         py2-pip && \
+    pip install --upgrade pip && \
     pip install pytest gcovr pep8 && \
     rm -rf /root/.cache
