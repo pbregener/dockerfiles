@@ -9,11 +9,10 @@ RUN apt-get update && \
       chktex \
       latexmk && \
     apt-get -y clean && \
-    rm -rf /var/lib/apt/lists/* && \
-    (tlmgr init-usertree || exit 0) && \
-    rm -rf /tmp/*
+    rm -rf /var/lib/apt/lists/* /tmp/*
 
-RUN tlmgr update --self --all && \
+RUN (tlmgr init-usertree || exit 0) && \
+    tlmgr update --self --all && \
     tlmgr install \
       babel-danish \
       blindtext \
