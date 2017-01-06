@@ -11,7 +11,9 @@ RUN apt-get update && \
     apt-get -y clean && \
     rm -rf /var/lib/apt/lists/* && \
     (tlmgr init-usertree || exit 0) && \
-    tlmgr update --self --all && \
+    rm -rf /tmp/*
+
+RUN tlmgr update --self --all && \
     tlmgr install \
       babel-danish \
       blindtext \
@@ -24,6 +26,7 @@ RUN apt-get update && \
       ly1 \
       mweights \
       placeins \
+      preprint \
       relsize \
       sourcesanspro \
       ulem \
@@ -31,3 +34,4 @@ RUN apt-get update && \
       upquote \
       wrapfig && \
     rm -rf /tmp
+
