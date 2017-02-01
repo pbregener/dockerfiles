@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:16.10
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -9,10 +9,9 @@ RUN apt-get update && \
       chktex \
       latexmk && \
     apt-get -y clean && \
-    rm -rf /var/lib/apt/lists/* && \
-    (tlmgr init-usertree || exit 0) && \
-    tlmgr option repository \
-      ftp://tug.org/historic/systems/texlive/2015/tlnet-final && \
+    rm -rf /var/lib/apt/lists/* /tmp/*
+
+RUN (tlmgr init-usertree || exit 0) && \
     tlmgr update --self --all && \
     tlmgr install \
       babel-danish \
@@ -26,10 +25,14 @@ RUN apt-get update && \
       ly1 \
       mweights \
       placeins \
+      preprint \
       relsize \
       sourcesanspro \
       ulem \
       units \
       upquote \
       wrapfig && \
-    rm -rf /tmp
+    rm -rf /tmp/*
+
+
+

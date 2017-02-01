@@ -1,0 +1,20 @@
+FROM pboreg/latex
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN tlmgr update --self --all && \
+    tlmgr install \
+      beamer \
+      pgf \
+      datetime \
+      fmtcount && \
+    rm -rf /tmp/*
+
+# Install DTU beamer templates from GitLab repo (master branch)
+RUN cd ~/texmf && \
+    wget -qO- --no-check-certificate \
+      https://gitlab.gbar.dtu.dk/latex/dtutemplates/repository/archive.tar?ref=master | \
+    tar x --strip 1 && \
+    texhash --verbose && \
+    rm -rf /tmp/*
+
