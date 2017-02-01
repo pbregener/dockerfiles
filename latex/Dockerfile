@@ -12,6 +12,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* /tmp/*
 
 RUN (tlmgr init-usertree || exit 0) && \
+    tlmgr option repository http://mirror.ctan.org/systems/texlive/tlnet && \
     tlmgr update --self --all && \
     tlmgr install \
       babel-danish \
@@ -33,6 +34,4 @@ RUN (tlmgr init-usertree || exit 0) && \
       upquote \
       wrapfig && \
     rm -rf /tmp/*
-
-
 
