@@ -13,5 +13,8 @@ RUN apk add --no-cache \
         python2 \
         py2-pip && \
     pip install --upgrade pip && \
-    pip install pytest gcovr pycodestyle && \
+    pip install \
+        gcovr \
+        pytest \
+        pycodestyle && \
     rm -rf /root/.cache
