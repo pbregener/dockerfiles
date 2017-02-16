@@ -4,10 +4,10 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
     apt-get -yq install --no-install-recommends \
-      wget xzdec vim \
+      wget xzdec unzip \
       texlive \
       chktex \
-      latexmk && \
+      perl-base && \
     apt-get -y clean && \
     rm -rf /var/lib/apt/lists/* /tmp/*
 
@@ -35,3 +35,7 @@ RUN (tlmgr init-usertree || exit 0) && \
       wrapfig && \
     rm -rf /tmp/*
 
+RUN wget -nv http://mirrors.ctan.org/support/latexmk.zip && \
+    unzip -q latexmk.zip && \
+    mv latexmk/latexmk.pl /usr/bin/latexmk && \
+    rm -rf latexmk*
