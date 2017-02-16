@@ -1,0 +1,9 @@
+# rc file for latexmk
+
+# Generate PDF per default
+$pdf_mode = 1;
+$postscript_mode = 0;
+$dvi_mode = 0;
+
+# Clean up additional files created by beamer
+$clean_ext = "synctex.gz %R*.vrb nav snm"

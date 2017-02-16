@@ -39,3 +39,5 @@ RUN wget -nv http://mirrors.ctan.org/support/latexmk.zip && \
     unzip -q latexmk.zip && \
     mv latexmk/latexmk.pl /usr/bin/latexmk && \
     rm -rf latexmk*
+
+COPY LatexMk /opt/local/share/latexmk/
