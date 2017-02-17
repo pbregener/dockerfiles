@@ -1,6 +1,8 @@
 # VTK in Alpine Linux
 FROM alpine:3.5
 
+ARG NJOBS=2
+
 # Install some Alpine packages
 RUN apk add --no-cache \
     bash \
@@ -33,7 +35,11 @@ RUN wget -nv -O- http://www.vtk.org/files/release/7.1/VTK-7.1.0.tar.gz | \
     -D VTK_WRAP_PYTHON=ON \
     -D VTK_PYTHON_VERSION:STRING=2 \
     . && \
-    make -j && \
+    make -j $NJOBS && \
     make install && \
     cd .. && rm -rf VTK-7.1.0
+
+# Install imagemagick (and possibly more later) to compare images
+RUN apk add --no-cache \
+    imagemagick
 
