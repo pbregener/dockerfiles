@@ -1,0 +1,8 @@
+FROM pboreg/esppro-ci
+
+RUN apk add --no-cache \
+        graphviz && \
+    pip install --upgrade pip && \
+    pip install \
+        ford && \
+    rm -rf /root/.cache
