@@ -17,6 +17,7 @@ RUN (tlmgr init-usertree || exit 0) && \
     tlmgr install \
       babel-danish \
       blindtext \
+      dblfloatfix \
       doi \
       enumitem \
       etoolbox \
