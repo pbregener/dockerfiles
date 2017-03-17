@@ -4,10 +4,13 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 RUN tlmgr update --self --all && \
     tlmgr install \
+      animate \
       beamer \
-      pgf \
       datetime \
-      fmtcount && \
+      fmtcount \
+      media9 \
+      ocgx2 \
+      pgf && \
     rm -rf /tmp/*
 
 # Install DTU beamer templates from GitLab repo (master branch)
