@@ -10,7 +10,8 @@ RUN tlmgr update --self --all && \
       fmtcount \
       media9 \
       ocgx2 \
-      pgf && \
+      pgf \
+      xpatch && \
     rm -rf /tmp/*
 
 # Install DTU beamer templates from GitLab repo (master branch)
