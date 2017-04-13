@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:3.6
 
 RUN apk add --no-cache \
         bash \
@@ -7,13 +7,11 @@ RUN apk add --no-cache \
         fortify-headers \
         openblas-dev \
         make \
+        cmake \
         git \
         gfortran \
         python2 \
         py2-pip && \
-    apk add --no-cache --update-cache \
-            --repository http://nl.alpinelinux.org/alpine/edge/main \
-        cmake && \
     pip install --upgrade pip && \
     pip install \
         gcovr \
