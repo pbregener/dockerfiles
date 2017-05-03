@@ -18,5 +18,6 @@ RUN apk add --no-cache \
     pip install \
         gcovr \
         pytest \
-        pycodestyle && \
+        pycodestyle \
+        six && \
     rm -rf /root/.cache
