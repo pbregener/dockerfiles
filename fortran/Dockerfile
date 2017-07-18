@@ -15,6 +15,7 @@ RUN apk add --no-cache \
     pip install --upgrade pip && \
     pip install \
         gcovr \
+        gitlint \
         pytest \
         pycodestyle \
         six && \
