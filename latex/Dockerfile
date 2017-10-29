@@ -1,5 +1,5 @@
-# Ubuntu 17.04 has TeXLive 2016
-FROM ubuntu:17.04
+# Ubuntu 17.10 has TeXLive 2017
+FROM ubuntu:17.10
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -27,19 +27,20 @@ RUN apt-get update && \
       doi \
       enumitem \
       etoolbox \
-      fontawesome \
       footmisc \
-      inconsolata \
       ly1 \
       mweights \
       placeins \
       preprint \
       relsize \
-      sourcesanspro \
       ulem \
       units \
       upquote \
       wrapfig && \
+    tlmgr install \
+      fontawesome \
+      inconsolata \
+      sourcesanspro ; \
     apt-get purge -yq \
       wget xzdec unzip && \
     apt-get autoremove -yq && \
