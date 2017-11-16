@@ -2,6 +2,6 @@ FROM pboreg/esppro-ci
 
 RUN dnf install -y --nodocs \
         graphviz && \
-    pip install \
+    pip3 install \
         ford && \
     rm -rf /root/.cache
