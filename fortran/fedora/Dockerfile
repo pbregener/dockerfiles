@@ -1,6 +1,6 @@
 FROM fedora:latest
 
-RUN dnf upgrade -y && \
+RUN echo "deltarpm=False" >> /etc/dnf/dnf.conf && \
     dnf install -y --nodocs \
         binutils \
         openblas-devel \
@@ -18,5 +18,6 @@ RUN dnf upgrade -y && \
         pycodestyle \
         setuptools \
         sh && \
+    dnf autoremove -y && \
     dnf clean all && \
     rm -rf /root/.cache
