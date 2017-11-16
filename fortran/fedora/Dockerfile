@@ -1,6 +1,7 @@
 FROM fedora:latest
 
-RUN dnf install -y --nodocs \
+RUN dnf upgrade -y && \
+    dnf install -y --nodocs \
         binutils \
         openblas-devel \
         openblas-openmp64 \
