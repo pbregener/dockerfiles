@@ -5,7 +5,7 @@ To build Docker images (primarily) for continuous integration.
 Dockerfile located in `fortran/`.
 Images based on Fedora or Alpine Linux. 
 Contains gcc, gfortran, git, make, cmake, OpenBLAS,
-and Python 2.7 (including pytest, gcovr, and pycodestyle).
+and Python 3.6 (including pytest, gcovr, and pycodestyle).
 
 ### Compile LaTeX documents
 Images based on Ubuntu 17.10 and TeXLive 2017.

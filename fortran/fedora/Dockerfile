@@ -8,16 +8,14 @@ RUN dnf install -y --nodocs \
         cmake \
         git-core \
         gcc-gfortran \
-        python2 \
-        python-pip && \
-    pip install --upgrade \
+        python3 && \
+    pip3 install --upgrade \
         click \
         gcovr \
         gitlint \
         pytest \
         pycodestyle \
         setuptools \
-        sh \
-        six && \
+        sh && \
     dnf clean all && \
     rm -rf /root/.cache
