@@ -1,4 +1,4 @@
-FROM fedora:latest
+FROM registry.fedoraproject.org/fedora:latest
 
 RUN echo "deltarpm=False" >> /etc/dnf/dnf.conf && \
     dnf install -y --nodocs \
