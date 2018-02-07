@@ -1,10 +1,8 @@
-FROM alpine:3.6
+FROM alpine:latest
 
 RUN apk add --no-cache \
         bash \
-        ncurses \
         binutils \
-        util-linux \
         libc-dev \
         fortify-headers \
         openblas-dev \
