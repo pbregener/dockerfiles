@@ -11,6 +11,7 @@ RUN apt-get update && \
       lastpage \
       multirow \
       pgf \
+      siunitx \
       soul \
       tabto-ltx \
       titlesec && \
