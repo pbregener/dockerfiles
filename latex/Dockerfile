@@ -39,7 +39,13 @@ RUN apt-get update && \
     tlmgr install \
       fontawesome \
       inconsolata \
+      newtx \
+      tex-gyre \
+      fontaxes \
+      kastrup \
+      boondox \
       sourcesanspro ; \
+    texhash && updmap -sys && \
     apt-get purge -yq \
       wget xzdec unzip && \
     apt-get autoremove -yq && \
