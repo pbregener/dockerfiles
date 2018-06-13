@@ -52,6 +52,7 @@ RUN apt-get update && \
 # Install additional tools and fonts:
 # * latest version of latexmk
 # * URW Classico font (Optima)
+# * Garamondx font (Garamond expert version)
 RUN apt-get update && \
     apt-get -yq install --no-install-recommends \
       wget unzip ca-certificates && \
@@ -62,6 +63,7 @@ RUN apt-get update && \
     wget -nv http://tug.org/fonts/getnonfreefonts/install-getnonfreefonts && \
     texlua install-getnonfreefonts && \
     getnonfreefonts --sys classico && \
+    getnonfreefonts --sys garamondx && \
     getnonfreefonts --sys -l && \
     apt-get purge -yq \
       wget unzip ca-certificates && \
