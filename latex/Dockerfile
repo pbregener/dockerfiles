@@ -1,5 +1,5 @@
-# Ubuntu 17.10 has TeXLive 2017
-FROM ubuntu:17.10
+# Ubuntu 18.04 (LTS) has TeXLive 2017
+FROM ubuntu:18.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -18,8 +18,7 @@ RUN apt-get update && \
     apt-get -yq install --no-install-recommends \
       wget xzdec unzip && \
     (tlmgr init-usertree || exit 0) && \
-    tlmgr option repository http://mirror.ctan.org/systems/texlive/tlnet && \
-    tlmgr update --self --all && \
+    tlmgr option repository ftp://tug.org/historic/systems/texlive/2017/tlnet-final && \
     tlmgr install \
       babel-danish \
       blindtext \
