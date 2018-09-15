@@ -3,11 +3,12 @@ FROM ubuntu:18.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-# Install basic TeXLive and required tools for tlmgr
+# Install basic TeXLive, git, and required tools for tlmgr
 RUN apt-get update && \
     apt-get -yq install --no-install-recommends \
       texlive \
       chktex \
+      git \
       perl-base && \
     apt-get -y clean && \
     rm -rf /var/lib/apt/lists/* \
