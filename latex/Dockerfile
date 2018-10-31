@@ -1,5 +1,5 @@
-# Ubuntu 18.04 (LTS) has TeXLive 2017
-FROM ubuntu:18.04
+# Ubuntu 18.10 has TeXLive 2018
+FROM ubuntu:18.10
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -17,9 +17,11 @@ RUN apt-get update && \
 # Install additional TeXLive packages
 RUN apt-get update && \
     apt-get -yq install --no-install-recommends \
-      wget xzdec unzip && \
+      wget xzdec xz-utils unzip && \
     (tlmgr init-usertree || exit 0) && \
-    tlmgr option repository ftp://tug.org/historic/systems/texlive/2017/tlnet-final && \
+# Uncomment below (and possibly adapt to another year) once the TeXLive version of
+# the Ubuntu base image becomes frozen/end-of-life (TeXLive 2018 for Ubuntu 18.10 Cosmic)
+#    tlmgr option repository ftp://tug.org/historic/systems/texlive/2018/tlnet-final && \
     tlmgr install \
       babel-danish \
       blindtext \
@@ -48,7 +50,7 @@ RUN apt-get update && \
       sourcesanspro ; \
     texhash && updmap -sys && \
     apt-get purge -yq \
-      wget xzdec unzip && \
+      wget xzdec xz-utils unzip && \
     apt-get autoremove -yq && \
     apt-get clean -yq && \
     rm -rf /var/lib/apt/lists/* \
