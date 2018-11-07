@@ -1,4 +1,9 @@
-FROM registry.fedoraproject.org/fedora:latest
+# The update cycles of the different Fedora base images seem
+# to be quite erratic. As of the F29 release, the "official"
+# image from hub.docker.com seems to be newer than the one from
+# the fedoraproject.org registry.
+FROM fedora:latest
+#FROM registry.fedoraproject.org/fedora:latest
 
 RUN echo "deltarpm=False" >> /etc/dnf/dnf.conf && \
     dnf install -y --nodocs \
