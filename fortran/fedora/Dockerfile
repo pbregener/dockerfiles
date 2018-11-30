@@ -15,6 +15,7 @@ RUN echo "deltarpm=False" >> /etc/dnf/dnf.conf && \
         cmake \
         git-core \
         gcc-gfortran \
+        libgfortran-static \
         python3 && \
     pip3 install --upgrade \
         gcovr \
