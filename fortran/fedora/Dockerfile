@@ -9,6 +9,7 @@ RUN echo "deltarpm=False" >> /etc/dnf/dnf.conf && \
     dnf install -y --nodocs \
         binutils \
         openblas-devel \
+        openblas-static \
         openblas-openmp64 \
         make \
         cmake \
